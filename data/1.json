@@ -1,0 +1,225 @@
+{
+  "title": "Проверь свои знания",
+  "data": [
+    {
+      "id": 0,
+      "question": "Чем заканчивается повесть А.С. Пушкина \"Дубровский\"?\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        0,
+        1,
+        0
+      ],
+      "inputLabelValue": [
+        "Маша выходит замуж за Дубровского",
+        "Маша выходит замуж за князя Верейского",
+        "Маша уходит в монастырь."
+      ]
+    },
+    {
+      "id": 1,
+      "question": "Где образуются клетки крови?\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        0,
+        1,
+        0
+      ],
+      "inputLabelValue": [
+        "В селезенке",
+        "В костном мозге",
+        "В печени"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "В какой позиции относительно Солнца можно наблюдать радугу?\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        1,
+        0,
+        0
+      ],
+      "inputLabelValue": [
+        "Лицом к солнцу",
+        "Солнце должно быть позади наблюдателя",
+        "Солнце должно быть над головой"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Что производиться из нефти?\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        1,
+        0,
+        0
+      ],
+      "inputLabelValue": [
+        "Косметика",
+        "Бумага",
+        "Скипидар"
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Что использовали в XVII веке в термометрах вместо ртути?\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        0,
+        1,
+        0
+      ],
+      "inputLabelValue": [
+        "Соленую воду",
+        "Бренди",
+        "Млечный сок растений"
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Продолжите ряд: 77, 49, 36, 18...\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        0,
+        0,
+        1
+      ],
+      "inputLabelValue": [
+        "9",
+        "6",
+        "8"
+      ]
+    },
+    {
+      "id": 6,
+      "question": "В каком из государств Ближнего Востока нет пустыни?\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        1,
+        0,
+        0
+      ],
+      "inputLabelValue": [
+        "В Ливане",
+        "В Ливии",
+        "В Сирии"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Самая длинная река России - это ...\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        0,
+        1,
+        0
+      ],
+      "inputLabelValue": [
+        "Енисей",
+        "Амур",
+        "Волга"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Столетняя война между Францией и Англией длилась...\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        0,
+        1,
+        0
+      ],
+      "inputLabelValue": [
+        "99 лет",
+        "116 лет",
+        "100 лет"
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Выберите правильный вариант:\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        0,
+        0,
+        1
+      ],
+      "inputLabelValue": [
+        "Во что бы то не стало",
+        "Во чтобы то ни стало",
+        "Во что бы то ни стало"
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Что означает в буквальном переводе слово \"симпозиум\"?\r\n",
+      "inputType": "radio",
+      "inputValue": [
+        "A",
+        "B",
+        "C"
+      ],
+      "inputValueScore": [
+        1,
+        0,
+        0
+      ],
+      "inputLabelValue": [
+        "Совместное возлияние",
+        "Встреча на нейтральной территории",
+        "Отсроченное принятие решения"
+      ]
+    }
+  ]
+}

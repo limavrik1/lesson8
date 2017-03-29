@@ -61,19 +61,28 @@ a {
 	overflow: hidden;
 }
 
-.wrapper_center:before {
-	content: "";
-	display: inline-block;
-	height: 100%;
-	width: 0;
-	vertical-align: middle;
-}
+/*.wrapper_center:before {*/
+	 /*content: "";*/
+	 /*display: inline-block;*/
+	 /*height: 100%;*/
+	 /*width: 0;*/
+	 /*vertical-align: middle;*/
+ /*}*/
 
 .content {
 	display: inline-block;
 	vertical-align: middle;
 	width: 920px;
+	margin-top: -80px;
 	/*margin: 0 auto;*/
+}
+
+.center {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 0;
+	vertical-align: middle;
 }
 
 .div_li {
@@ -186,3 +195,35 @@ a {
 .upload__success {
 	text-decoration-color: green;
 }
+
+.form {
+	text-align: center;
+	display: inline-block;
+	width: 300px;
+}
+
+.form__upload {
+	margin-bottom: 30px;
+}
+
+.content__test {
+	margin-top: 0;
+}
+
+/*.file-upload button{*/
+/*cursor: pointer;*/
+/*width: 100%;*/
+/*border: 0;*/
+	/*font-size: 14px;*/
+	/*font-weight: normal;*/
+	/*line-height: 1.42857143;*/
+	/*text-align: center;*/
+	/*white-space: nowrap;*/
+	/*vertical-align: middle;*/
+/*!*padding: 6px 12px;*!*/
+/*-webkit-transition: 0.3s ease;*/
+/*transition: 0.3s ease;*/
+/*color: #fff;*/
+/*background-color: #337ab7;*/
+/*border-color: #2e6da4;*/
+/*}*/

@@ -13,12 +13,17 @@ ini_set('html_errors', true);
 
 require_once 'functions.php';
 
+if (!hasRole('auth-user') && !hasRole('administrator')) {
+    http_response_code(403);
+    die('Доступ запрещен');
+}
+
 mb_internal_encoding('UTF-8');
 
 if (isset($_FILES['testFile'])) {
     $tmp_files = $_FILES['testFile']['tmp_name'];
 //    $fileName = 'data/' . $_FILES['testFile']['name'];
-    $fileName =  incrementFileName( 'data/', 'json' );
+    $fileName = incrementFileName('data/', 'json');
 //    if (file_exists($fileName)) {
 //        echo 'Пожалуйста, переименуйте файл. Такой файл существует';
 //        die(0);
@@ -46,6 +51,7 @@ if (isset($_FILES['testFile'])) {
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/font-awesome.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/header.css">
 
     </head>
     <body>
@@ -55,22 +61,49 @@ if (isset($_FILES['testFile'])) {
     </p>
     <![endif]-->
     <div class="wrapper wrapper_center">
+        <header class="header">
+            <div class="container clearfix">
+                <div class="header__left">
+                    <div class="user__name">
+                        <span><b> <?= getUserData()['name'] . ' ' . $_COOKIE['fio'] ?></b></span>
+                    </div>
+                </div>
+                <div class="header__right">
+                    <div class="contacts">
+                        <a href="logout.php" class="contacts__link">
+							<span class="contacts__link-text">
+                            	Выход
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="center"></div>
+
         <div class="content">
             <div class="test">
                 <h1>Загрузка тестов</h1>
             </div>
             <div class="form">
-                <form method="post" enctype="multipart/form-data">
+                <form class="form__upload" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
                     <div class="file-upload btn btn-info">
                         <span>Выбрать файл</span>
                         <input name="testFile" class="testFile" type="file" accept="application/json"/>
                     </div>
-                    <input type="submit" value="Отправить" class="file-upload btn btn-info" title="Максимальный размер 1 Мб" />
+                    <input type="submit" value="Отправить" class="file-upload btn btn-info"
+                           title="Максимальный размер 1 Мб"/>
                 </form>
                 <div class="file-upload btn btn-info">
                     <a href="list.php">Перейти к списку тестов</a>
                 </div>
+                <div class="file-upload btn btn-info">
+                    <a target="_blank" href="generator.php">Генератор MD5</a><br/>
+                </div>
+                <!--                <div class="file-upload btn btn-info">-->
+                <!--                    <a href="logout.php">Выход</a><br/>-->
+                <!--                </div>-->
             </div>
         </div>
     </div>

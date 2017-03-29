@@ -11,9 +11,14 @@ ini_set('html_errors', true);
 
 require_once 'functions.php';
 
+if (!hasRole('auth-user') && !hasRole('administrator') && !hasRole('guest')) {
+    http_response_code(403);
+    die('Доступ запрещен');
+}
+
 mb_internal_encoding('UTF-8');
 
-$testId = 'data/'. filter_input(INPUT_GET, 'id') .'.json';
+$testId = 'data/' . filter_input(INPUT_GET, 'id') . '.json';
 
 if (!empty($_POST) && isset($_GET['id'])) {
 
@@ -45,6 +50,7 @@ if (!empty($_POST) && isset($_GET['id'])) {
                 <link rel="stylesheet" href="css/fonts.css">
                 <link rel="stylesheet" href="css/font-awesome.css">
                 <link rel="stylesheet" href="css/main.css">
+                <link rel="stylesheet" href="css/header.css">
             </head>
             <body>
             <!--[if lte IE 9]>
@@ -53,24 +59,44 @@ if (!empty($_POST) && isset($_GET['id'])) {
             </p>
             <![endif]-->
             <div class="wrapper wrapper_title">
-            <div class="content">
+            <header class="header">
+                <div class="container clearfix">
+                    <div class="header__left">
+                        <div class="user__name">
+                            <span><b> <?= getUserData()['name'] . ' ' . $_COOKIE['fio'] ?></b></span>
+                        </div>
+                    </div>
+                    <div class="header__right">
+                        <div class="contacts">
+                            <a href="logout.php" class="contacts__link">
+							<span class="contacts__link-text">
+                            	Выход
+                            </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--            <div class="center"></div>            -->
+            <div class="content content__test">
             <div class="test">
-<!--                <h1>Результаты теста: --><?//= $title ?><!--</h1>-->
+                <!--                <h1>Результаты теста: --><?//= $title ?><!--</h1>-->
             </div>
             <div class="result">
             <?php
             $resultScore = 0;
             $dataID = 0;
             foreach ($_POST as $questionKey => $questionValue) {
-                if ($questionKey !== 'fio'){
-                for ($id = 0; $id < $inputValueCount[$dataID]; $id++) {
-                    if ($questionValue === $results['data'][$dataID]['inputValue'][$id]) {
-                        $resultScore += $results['data'][$dataID]['inputValueScore'][$id];
+//                if ($questionKey !== 'fio') {
+                    for ($id = 0; $id < $inputValueCount[$dataID]; $id++) {
+                        if ($questionValue === $results['data'][$dataID]['inputValue'][$id]) {
+                            $resultScore += $results['data'][$dataID]['inputValueScore'][$id];
+                        }
                     }
-                }}
+//                }
                 $dataID++;
             }
-            echo '<img src="data:image/png;base64,'.base64_encode(renderCertificate($title,$_POST['fio'],$resultScore, $questionCount)).'" />';
+            echo '<img src="data:image/png;base64,' . base64_encode(renderCertificate($title, $_COOKIE['fio'], $resultScore, $questionCount)) . '" />';
 //            echo '</br>';
 //            echo '<strong>Правильно: ' . $resultScore . " из $postCount </strong></br>";
 //            echo '<br/><a href="list.php">Назад к списку тестов</a>'; ?>
@@ -123,6 +149,7 @@ if (!empty($_POST) && isset($_GET['id'])) {
                 <link rel="stylesheet" href="css/fonts.css">
                 <link rel="stylesheet" href="css/font-awesome.css">
                 <link rel="stylesheet" href="css/main.css">
+                <link rel="stylesheet" href="css/header.css">
 
             </head>
             <body>
@@ -132,7 +159,26 @@ if (!empty($_POST) && isset($_GET['id'])) {
             </p>
             <![endif]-->
             <div class="wrapper wrapper_title">
-                <div class="content">
+                <header class="header">
+                    <div class="container clearfix">
+                        <div class="header__left">
+                            <div class="user__name">
+                                <span><b> <?= getUserData()['name'] . ' ' . $_COOKIE['fio'] ?></b></span>
+                            </div>
+                        </div>
+                        <div class="header__right">
+                            <div class="contacts">
+                                <a href="logout.php" class="contacts__link">
+							<span class="contacts__link-text">
+                            	Выход
+                            </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+<!--                <div class="center"></div>-->
+                <div class="content content__test">
                     <h1><?= $title ?></h1>
                     <form method="post" target="_blank">
                         <ol>
@@ -157,10 +203,10 @@ if (!empty($_POST) && isset($_GET['id'])) {
                                 ?>
                             </div>
                         </ol>
-                        <div class="fio">
-                            <label for="fio">Ваше имя:</label>
-                            <input id="fio" type="text" name="fio">
-                        </div>
+<!--                        <div class="fio">-->
+<!--                            <label for="fio">Ваше имя:</label>-->
+<!--                            <input id="fio" type="text" name="fio">-->
+<!--                        </div>-->
                         <div>
                             <button class="file-upload btn btn-info">Отправить</button>
                         </div>
